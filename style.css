@@ -1,0 +1,50 @@
+body{
+    background-color: #cf8ee9d0;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#botaoLogar{
+    padding: 10px;
+}
+
+.blocoSeparaDivs{
+    display: flex;
+}
+
+#loginUsuarioform{
+    text-align: center;
+    margin-top: 75px;
+    margin-left: 400px;
+    background-color: #FFF;
+    max-width: 300px;
+    padding: 50px 100px 100px;
+}
+
+
+#blocoSenha{
+    padding: 30px 0;
+}
+
+.input-container {
+    position: relative;
+    width: fit-content;
+}
+
+.input-container input {
+    padding-left: 40px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-container img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    pointer-events: none;
+}
