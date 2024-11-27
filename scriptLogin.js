@@ -1,3 +1,9 @@
+//document.getElementById('botaoLogar').addEventListener('click', function () {
+//    window.location.href = 'paginaUsuarios.html';
+//});
+
+//terminar de ver conexões banco
+
 
 const url = 'http://localhost:8081/login'
 
