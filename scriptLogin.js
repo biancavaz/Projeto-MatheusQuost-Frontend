@@ -14,8 +14,8 @@ document.getElementById('loginUsuarioform').addEventListener('submit', function 
     const nomeUser = document.getElementById('nomeUser').value;
     const senha = document.getElementById('senha').value;
 
+    
     //requisição post para a API
-
     fetch(url, {
         method: 'POST',
         headers: {
