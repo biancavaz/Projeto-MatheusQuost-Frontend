@@ -56,3 +56,40 @@ body{
     width: 20px;
     pointer-events: none;
 }
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 15px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+thead th {
+    background-color: #6200ea;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+tbody tr {
+    background-color: #f4f4f9;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #e8e8f5;
+}
+
+tbody td:first-child {
+    border-left: 2px solid #6200ea;
+}
+
+tbody td:last-child {
+    border-right: 2px solid #6200ea;
+}
