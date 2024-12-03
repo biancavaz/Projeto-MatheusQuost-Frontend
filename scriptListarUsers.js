@@ -15,17 +15,19 @@ async function chamarAPI() {
             usuarios.forEach(usuario => {
                 const htmlString = `
                     <tr>
-                        <td>${usuario.name}</td>
+                        <td>${usuario.nome}</td>
                         <td>${usuario.email}</td>
                     </tr>
                 `;
 
-                // Criar um contêiner temporário para armazenar o HTML
-                const tempDiv = document.createElement("div");
+                const tempDiv = document.createElement("tr");
                 tempDiv.innerHTML = htmlString;
 
-                // Adicionar o conteúdo ao corpo da tabela usando appendChild
-                corpoTabela.appendChild(tempDiv.firstElementChild);
+                // Criar um contêiner temporário para armazenar o HTML
+                const tabela = document.getElementById('corpodaTabela')
+                tabela.appendChild(tempDiv);
+
+                
             });
         } else {
             console.error("Erro ao buscar dados:", res.status);
