@@ -5,7 +5,7 @@
 //terminar de ver conexões banco
 
 
-const url = 'http://localhost:8081/login'
+const url = 'http://10.129.226.96:8081/select'
 
 document.getElementById('botaoLogar').addEventListener('click', function () {
     event.preventDefault;

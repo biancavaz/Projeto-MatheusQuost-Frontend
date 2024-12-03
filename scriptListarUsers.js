@@ -1,13 +1,21 @@
 
-const url = 'http://localhost:8081/select'
+const url = 'http://10.129.226.96:8081/select'
 
-    fetch(url)
-    .then(body => {
-        console.log(body)
-    })
+    // fetch(url)
+    // .then(body => {
+    //     console.log(body)
+    // })
 
+    async function chamarAPI() {
+        const res = await fetch(url);
 
-    
+        if(res.status === 200) {
+            const obj = await res.json();
+            console.log(obj);
+        }
+    } 
+
+    chamarAPI();
 
 // document.getElementById('botaoVerUsers').addEventListener('click', () => {
 //    fetch(url)
