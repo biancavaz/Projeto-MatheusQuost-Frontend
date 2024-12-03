@@ -1,60 +1,39 @@
 
 const url = 'http://10.129.226.96:8081/select'
 
-    // fetch(url)
-    // .then(body => {
-    //     console.log(body)
-    // })
+const corpoTabela = document.getElementById("corpodaTabela");
 
-    async function chamarAPI() {
+async function chamarAPI() {
+    try {
         const res = await fetch(url);
 
-        if(res.status === 200) {
-            const obj = await res.json();
-            console.log(obj);
+        if (res.status === 200) {
+            const usuarios = await res.json();
+            console.log(usuarios);
+
+            // Para cada usuário, gerar HTML como string
+            usuarios.forEach(usuario => {
+                const htmlString = `
+                    <tr>
+                        <td>${usuario.name}</td>
+                        <td>${usuario.email}</td>
+                    </tr>
+                `;
+
+                // Criar um contêiner temporário para armazenar o HTML
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = htmlString;
+
+                // Adicionar o conteúdo ao corpo da tabela usando appendChild
+                corpoTabela.appendChild(tempDiv.firstElementChild);
+            });
+        } else {
+            console.error("Erro ao buscar dados:", res.status);
         }
-    } 
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    }
+}
 
-    chamarAPI();
-
-// document.getElementById('botaoVerUsers').addEventListener('click', () => {
-//    fetch(url)
-//    .then(response => {
-//     if(!response.ok) {
-//             throw new Error('erro ao carregar usuários')
-//        } else {
-//            return response.json();
-//         }
-//     })
-//     .then(data => {
-//         const corpodaTabela = document.getElementById('corpodaTabela');
-//         corpodaTabela.innerHTML = ''; 
-
-//         if( data.length === 0) {
-//             corpodaTabela.innerHTML = `
-//                 <tr> 
-//                     <td colspan="4"> Nenhum usuátio encontrado.</td> 
-//                 </tr>
-//             `;
-
-//             return;
-//         }
-
-//         data.forEach(user  => {
-//             const row = `
-//                 <tr>
-//                     <td> ${user.nome} </td>
-//                     <td> ${user.email}</td>
-//                 </tr>
-
-//             `;
-
-//             corpodaTabela.innerHTML += row
-//         })
-//     })
-
-//     .catch(error => {
-//         console.log('Erro', error);
-//         alert('Erro ao carregar usuários, verifique a api')
-//     })
-// })
+// Chamar a função
+chamarAPI();
