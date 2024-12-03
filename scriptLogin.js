@@ -45,15 +45,6 @@ document.getElementById('botaoLogar').addEventListener('click', function () {
             document.getElementById('mensagem').textContent = data.message;
 
         }
-
-        // if(data.ok){
-        //     return response.text(); //converte a resposta em texto
-        // } else {
-        //     throw new Error('Credenciais Inválidas') 
-        // }
-        // document.getElementById('mensagem').textContent = data;
-        // document.getElementById('mensagem').style.color = 'green';
-
     })
 
     .catch(error => {
@@ -61,4 +52,3 @@ document.getElementById('botaoLogar').addEventListener('click', function () {
         document.getElementById('mensagem').style.color - 'red'
     })
 })
-
