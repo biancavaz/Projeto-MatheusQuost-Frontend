@@ -19,6 +19,11 @@ body{
     padding-left: 150px;
 }
 
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
 .blocoSeparaDivs{
     display: flex;
 }

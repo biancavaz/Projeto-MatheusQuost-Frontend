@@ -15,8 +15,14 @@ async function chamarAPI() {
             usuarios.forEach(usuario => {
                 const htmlString = `
                     <tr>
-                        <td>${usuario.nome}</td>
-                        <td>${usuario.email}</td>
+                        <td>${usuario.nome} </td>
+                        <td class="flex">${usuario.email}
+                            <div> 
+                                <button onclick="deletarUser(${usuario.id})"> deletar </button> 
+                                <button> editar </button>
+                            </div> 
+                        </td>
+                       
                     </tr>
                 `;
 
@@ -39,3 +45,18 @@ async function chamarAPI() {
 
 // Chamar a função
 chamarAPI();
+
+
+async function deletarUser (id){
+    const urlDel = `http://10.129.226.96:8081/delete/${id}`
+
+    fetch(urlDel, {
+        method: "DELETE"
+    })
+    .then(response =>{
+        window.location.href = window.location.href
+
+    })
+}
+
+// fazer o de editar
